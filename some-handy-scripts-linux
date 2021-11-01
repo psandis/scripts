@@ -1,0 +1,38 @@
+Some random useful scripts. (To-be-improved)
+
+##############################################################################
+Find every file named with wildcard and print only the "unique" files.
+##############################################################################
+$ find . -type f -name "*.*" | awk -F. '{print $NF}' | sort -u
+
+##############################################################################
+Random password generation to a given length, default 20 characters. Masking with capital/lower case alphabets and numbers)
+Script useful if put under user ~/.bashrc
+##############################################################################
+genpasswrd() {
+	local l=$1
+       	[ "$l" == "" ] && l=20
+      	tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}
+### To run the script if in users bash ###
+$ genpasswrd 16
+
+### To run the script without the bash, replace "l" with a given value inside ${l}:
+$ tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+
+##############################################################################
+Searching a string inside current folder from all files ending with (*.js)
+##############################################################################
+$ find . -name '*.js' -exec grep -i 'string to search for' {} \; -print
+
+##############################################################################
+A simple way to empty a log or text file in a given path. Be sure to have backups :)
+##############################################################################
+cat /dev/null > /path/to/file.log
+
+##############################################################################
+A simple way to MD5 encrypt a password string?
+##############################################################################
+echo -n "your_plaintext_password" | md5sum -
+
+
