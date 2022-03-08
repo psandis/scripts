@@ -1,4 +1,4 @@
-Some random useful scripts. (To-be-improved)
+Some randomly selected useful scripts. (Update in progress)
 
 ##############################################################################
 Find every file named with wildcard and print only the "unique" files.
@@ -28,11 +28,45 @@ $ find . -name '*.js' -exec grep -i 'string to search for' {} \; -print
 ##############################################################################
 A simple way to empty a log or text file in a given path. Be sure to have backups :)
 ##############################################################################
-cat /dev/null > /path/to/file.log
+$ cat /dev/null > /path/to/file.log
 
 ##############################################################################
 A simple way to MD5 encrypt a password string?
 ##############################################################################
-echo -n "your_plaintext_password" | md5sum -
+$ echo -n "your_plaintext_password" | md5sum -
 
+##############################################################################
+Grep entries from a file for a particular day between a time range  (Example: YYYY.MM.DD 09:00-10:00)
+##############################################################################
+$ less [FILE] | grep -E '2020.01.16 (09:[0-5][0-9]|10:00)'
+
+##############################################################################
+Search for files which size is > X (example 500 MB). One handy way to pick large files taking a lot of disk space
+##############################################################################
+$ find / -type f -size +500000k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+
+##############################################################################
+How to check for running processes using ex. FTP port (:21)
+##############################################################################
+$ lsof -ni:21
+
+##############################################################################
+How to display a service port that is active (LISTEN). Example Apache
+##############################################################################
+netstat -tulpen | grep "HTTPD"
+
+##############################################################################
+How to display the application/source assigned to a PID
+##############################################################################
+$ ps aux | grep "HTTPD" 
+
+##############################################################################
+How to find out all the ports being used by a single application or process using particular PID
+##############################################################################
+$ netstat -A inet -n -p | grep 1413
+
+##############################################################################
+To get a list of all usernames that are currently logged in
+##############################################################################
+$ who | cut -d' ' -f1 | sort | uniq
 
