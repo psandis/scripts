@@ -1,5 +1,7 @@
 # Infrastructure Scripts & Automation Notes
 
+![Scripts](public/scripts.png)
+
 This repository contains a curated set of practical notes, command examples, and reusable snippets for infrastructure management, automation, and system administration.
 
 It serves as a personal and professional reference for recurring tasks related to Ansible, Terraform, Docker, SSH, cron jobs, Linux utilities, and macOS scripting.
