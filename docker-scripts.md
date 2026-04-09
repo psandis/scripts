@@ -410,7 +410,7 @@ docker system prune
 docker system prune -a --volumes
 ```
 
-> ⚠️ Use with caution — this removes a lot of data.
+> ⚠️ Use with caution, this removes a lot of data.
 
 ---
 

@@ -1,6 +1,6 @@
 # Ansible Scripts & Playbooks
 
-Configuration management and server provisioning — set up Docker, Nginx, PostgreSQL, Certbot SSL, and deploy containerized web apps.
+Configuration management and server provisioning. Covers Docker, Nginx, PostgreSQL, Certbot SSL, and deploying containerized web apps.
 
 ---
 
@@ -563,7 +563,7 @@ Use roles in a playbook:
 ## Tips
 
 - Always use `--check` (dry run) before applying to production
-- Use `ansible-vault` for all secrets — never plain text passwords
+- Use `ansible-vault` for all secrets, never plain text passwords
 - Use `ansible-lint` to check playbooks for best practices
 - Use `--diff` flag to see what changes Ansible makes to files
 - Set `ansible.cfg` in your project root for consistent settings

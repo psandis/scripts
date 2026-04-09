@@ -10,7 +10,7 @@ A curated collection of SSH, SCP, rsync, and remote access commands for secure s
 - [SSH Keys](#ssh-keys)
 - [SSH Config](#ssh-config)
 - [Port Forwarding & Tunneling](#port-forwarding--tunneling)
-- [SCP — Secure Copy](#scp--secure-copy)
+- [SCP (Secure Copy)](#scp-secure-copy)
 - [rsync](#rsync)
 - [Remote Commands](#remote-commands)
 - [SSH Agent](#ssh-agent)
@@ -245,7 +245,7 @@ ssh -J bastion-user@bastion.example.com internal-user@10.0.0.5
 
 ---
 
-## SCP — Secure Copy
+## SCP (Secure Copy)
 
 ### Copy File to Remote Server
 
@@ -289,7 +289,7 @@ scp -i ~/.ssh/my_key file.txt user@hostname:/remote/path/
 
 ## rsync
 
-rsync is preferred over SCP for large transfers — it's faster, resumable, and supports incremental syncs.
+rsync is preferred over SCP for large transfers. It's faster, resumable, and supports incremental syncs.
 
 ### Sync Local Directory to Remote
 

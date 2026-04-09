@@ -1,14 +1,14 @@
 # Terraform Scripts & Examples
 
-Infrastructure as Code for AWS and GCP — provision VPCs, compute instances, databases, DNS, load balancers, and more.
+Infrastructure as Code for AWS and GCP. Covers VPCs, compute instances, databases, DNS, load balancers, and more.
 
 ---
 
 ## Table of Contents
 
 - [Terraform Basics](#terraform-basics)
-- [AWS — Full Web Stack](#aws--full-web-stack)
-- [GCP — Full Web Stack](#gcp--full-web-stack)
+- [AWS Full Web Stack](#aws-full-web-stack)
+- [GCP Full Web Stack](#gcp-full-web-stack)
 - [Shared Patterns](#shared-patterns)
 - [State Management](#state-management)
 - [Tips](#tips)
@@ -65,7 +65,7 @@ project/
 
 ---
 
-## AWS — Full Web Stack
+## AWS Full Web Stack
 
 A complete example: VPC → EC2 instance with Docker → RDS PostgreSQL → Route53 DNS → ALB with SSL.
 
@@ -422,7 +422,7 @@ output "ssh_command" {
 
 ---
 
-## GCP — Full Web Stack
+## GCP Full Web Stack
 
 Equivalent stack on Google Cloud: VPC → GCE instance with Docker → Cloud SQL PostgreSQL → Cloud DNS.
 
@@ -753,7 +753,7 @@ terraform {
 
 - Always run `terraform plan` before `apply`
 - Use workspaces or separate directories for dev/staging/prod
-- Tag everything — makes cleanup and cost tracking easier
+- Tag everything for easier cleanup and cost tracking
 - Use `terraform import` to bring existing resources under management
 - Store state remotely with locking to avoid conflicts
 - Use `-target=resource` to apply a single resource during debugging

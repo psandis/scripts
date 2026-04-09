@@ -10,7 +10,7 @@ A curated collection of cron jobs, scheduled task patterns, and shell automation
 - [Cron Syntax](#cron-syntax)
 - [Common Cron Examples](#common-cron-examples)
 - [Crontab Management](#crontab-management)
-- [macOS — launchd](#macos--launchd)
+- [macOS launchd](#macos-launchd)
 - [Shell Script Patterns](#shell-script-patterns)
 - [Logging & Notifications](#logging--notifications)
 - [Tips & Best Practices](#tips--best-practices)
@@ -226,7 +226,7 @@ MAILTO=admin@example.com
 
 ### Use Full Paths
 
-Always use absolute paths in cron — it runs in a minimal environment:
+Always use absolute paths in cron because it runs in a minimal environment:
 
 ```bash
 # Bad
@@ -238,7 +238,7 @@ Always use absolute paths in cron — it runs in a minimal environment:
 
 ---
 
-## macOS — launchd
+## macOS launchd
 
 macOS uses `launchd` instead of cron for system-level scheduling. User agents go in `~/Library/LaunchAgents/`.
 
@@ -361,7 +361,7 @@ done
 DAY=$(date +%u)  # 1=Monday, 7=Sunday
 
 if [ "$DAY" -ge 6 ]; then
-  echo "Weekend — skipping"
+  echo "Weekend - skipping"
   exit 0
 fi
 
@@ -431,11 +431,11 @@ log show --predicate 'senderImagePath contains "logger"' --last 1h
 
 ## Tips & Best Practices
 
-- Always use **absolute paths** — cron doesn't load your shell profile
+- Always use **absolute paths** because cron doesn't load your shell profile
 - **Test scripts manually** before scheduling them
 - Redirect output to a log file so errors aren't silently lost
 - Use a **lock file** to prevent overlapping runs for long-running jobs
-- Use `@reboot` cautiously — errors at boot can be hard to debug
+- Use `@reboot` cautiously since errors at boot can be hard to debug
 - Check `cron` is running: `sudo crontab -l` or `pgrep cron`
 - On macOS, prefer **launchd** over cron for reliability
 - Use [crontab.guru](https://crontab.guru) to verify your cron expressions
